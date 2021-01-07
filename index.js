@@ -427,71 +427,11 @@ client.on('group-participants-update', async (anu) => {
 						reply('❌ *ERROR* ❌')
 					}
 					break
-			    case 'randomhentai':
-				    try {
-						if (!isNsfw) return reply('Nsfw tidak di aktifkan')
-						res = await fetchJson(`https://tobz-api.herokuapp.com/api/hentai`, {method: 'get'})
-						buffer = await getBuffer(res.result)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'hentai teros'})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply('❌ *ERROR* ❌')
-					}
-					break
-                case 'nsfwloli':
-				    try {
-						if (!isNsfw) return reply('Nsfw tidak di aktifkan')
-						res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
-						buffer = await getBuffer(res.url)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply('❌ *ERROR* ❌')
-					}
-					break
-			    case 'nsfwblowjob':
-				    try {
-						if (!isNsfw) return reply('Nsfw tidak di aktifkan')
-						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwblowjob`, {method: 'get'})
-						buffer = await getBuffer(res.result)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply('❌ *ERROR* ❌')
-					}
-					break
-			    case 'nsfwneko':
-				    try {
-						if (!isNsfw) return reply('Nsfw tidak di aktifkan')
-						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwneko`, {method: 'get'})
-						buffer = await getBuffer(res.result)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'ni anjim'})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply('❌ *ERROR* ❌')
-					}
-					break
-				case 'nsfwtrap':
-				    try {
-						if (!isNsfw) return reply('Nsfw tidak di aktifkan')
-						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwtrap`, {method: 'get'})
-						buffer = await getBuffer(res.result)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'ni anjim'})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply('❌ *ERROR* ❌')
-					}
-					break
                 case 'bucin':
 					gatauda = body.slice(7)
 					anu = await fetchJson(`https://arugaz.herokuapp.com/api/howbucins`, {method: 'get'})
 					reply(anu.desc)
 					break
-		        case 'persengay':
-					gatauda = body.slice(7)
-					anu = await fetchJson(`https://arugaz.herokuapp.com/api/howbucins`, {method: 'get'})
-					reply(anu.desc+anu.persen)
-					break	
 				case 'quotes':
 					gatauda = body.slice(8)
 					anu = await fetchJson(`https://arugaz.herokuapp.com/api/randomquotes`, {method: 'get'})
@@ -531,13 +471,6 @@ client.on('group-participants-update', async (anu) => {
 					pok = await getBuffer(nimek)
 					client.sendMessage(from, pok, image, { quoted: mek })
 					break
-                case 'indohot':
-                if (!isNsfw) return reply('nsfw gak aktif')
-                   anu = await fetchJson(`https://arugaz.herokuapp.com/api/indohot`, {method: 'get'})
-                   if (anu.error) return reply(anu.error)
-                   hasil = `*judul* \n${anu.result.judul} *genre* \n${anu.result.genre} *durasi* \n${anu.result.durasi} *url* \n${anu.result.url}`
-                   client.sendMessage(from, hasil, text, {quoted: mek,})
-                   break
 				case 'ytmp4':
 					if (args.length < 1) return reply('Urlnya mana um?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
@@ -704,17 +637,6 @@ client.on('group-participants-update', async (anu) => {
 						res = await fetchJson(`https://api.lolis.life/random`, {method: 'get'})
 						buffer = await getBuffer(res.url)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ingat! Citai Lolimu'})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply('❌ *ERROR* ❌')
-					}
-					break
-				case 'nsfwloli': 
-				    try {
-						if (!isNsfw) return reply('Maaf fitur ini belum di aktifkan/kesalahan server bot')
-						res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
-						buffer = await getBuffer(res.url)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
 					} catch (e) {
 						console.log(`Error :`, color(e,'red'))
 						reply('❌ *ERROR* ❌')
