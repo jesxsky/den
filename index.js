@@ -31,9 +31,9 @@ const nsfw = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
-            + 'FN:Affis Admin\n' 
+            + 'FN:Deni Admin\n' 
             + 'ORG: Pengembang XBot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=6282334297175:+62 823-3429-7175\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=6282144323683:+62 821-4432-3683\n' 
             + 'END:VCARD' 
 prefix = '!'
 blocked = []          
@@ -67,7 +67,7 @@ function kyun(seconds){
 }
 
 
-const { tanggal, waktu, instagram, whatsapp, youtube, nomer, ontime } = config
+const { tanggal, waktu, instagram, whatsapp, nomer, ontime } = config
 
 
 
